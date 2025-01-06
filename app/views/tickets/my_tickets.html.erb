@@ -1,0 +1,15 @@
+<<h1>Your Tickets</h1>
+
+<% if @tickets_summary.any? %>
+  <ul>
+    <% @tickets_summary.each do |summary| %>
+      <li>
+        <strong>Event:</strong> <%= summary[:event].name %>
+        <br>
+        <strong>Total Tickets:</strong> <%= summary[:total_tickets] %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You don't have any tickets.</p>
+<% end %>

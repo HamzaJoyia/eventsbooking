@@ -2,7 +2,7 @@ class EventsController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
     before_action :set_event, only: [:show, :edit, :update, :destroy]
   
-    # Cache the events list to improve performance
+    # for caching I have ->Cache the events list to improve performance
     def index
       @events = Rails.cache.fetch('events', expires_in: 5.minutes) { Event.all }
     end
@@ -39,6 +39,11 @@ class EventsController < ApplicationController
       @event.destroy
       redirect_to events_path, notice: 'Event deleted successfully.'
     end
+
+    def my_events
+        @events = current_user.events
+      end
+      
   
     private
   
