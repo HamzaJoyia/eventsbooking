@@ -1,24 +1,10 @@
 # README
+This is a simple Ruby on Rails event booking system that handles all booking processes efficiently.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+For concurrency, I’ve implemented an event lock to prevent double-booking and ensure smooth ticket reservations. For scalability, the system is designed to handle increased traffic, with optimized database queries and 
 
-Things you may want to cover:
+Authentication is managed with Devise, offering secure user registration and login. Caching is used to improve performance, reducing database load for frequently accessed data.
 
-* Ruby version
+Key gems used include Devise for authentication, Sidekiq for background jobs, and Pundit for authorization.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This system is built to be scalable, efficient, and easy to maintai
