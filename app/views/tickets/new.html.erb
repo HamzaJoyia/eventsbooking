@@ -1,0 +1,14 @@
+<%= form_with(model: [@event, @ticket], local: true) do |form| %>
+    <div>
+      <%= form.label :quantity, "Number of tickets" %>
+      <%= form.number_field :quantity, min: 1, max: @event.tickets_available, value: 1 %>
+      <% if @event.tickets_available <= 0 %>
+        <p class="alert alert-danger">No tickets available</p>
+      <% end %>
+    </div>
+  
+    <div>
+      <%= form.submit 'Book Ticket' %>
+    </div>
+  <% end %>
+  

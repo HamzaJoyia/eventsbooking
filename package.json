@@ -1,0 +1,7 @@
+{
+  "name": "event_booking_system",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}

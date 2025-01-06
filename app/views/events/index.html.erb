@@ -1,0 +1,15 @@
+<h1>All Events</h1>
+
+<% @events.each do |event| %>
+  <div class="event-card">
+    <h2><%= event.name %></h2>
+    <p><%= event.description %></p>
+    <p><strong>Location:</strong> <%= event.location %></p>
+    <p><strong>Date:</strong> <%= event.date.strftime('%B %d, %Y at %I:%M %p') %></p>
+    <p><strong>Tickets Available:</strong> <%= event.tickets_available %> / <%= event.tickets_total %></p>
+    
+<%= link_to 'Book Tickets', new_event_ticket_path(event), class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= link_to 'Create New Event', new_event_path, class: 'btn btn-success' %>
